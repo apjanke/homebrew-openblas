@@ -22,6 +22,8 @@ class R < Formula
     depends_on :x11 => :recommended
   end
 
+  conflicts_with "r", :because => "both install a package with the same name"
+
   # needed to preserve executable permissions on files without shebangs
   skip_clean "lib/R/bin"
 

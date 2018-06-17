@@ -7,6 +7,8 @@ class SuiteSparse < Formula
   depends_on "dpo/openblas/metis"
   depends_on "openblas"
 
+  conflicts_with "suite-sparse", :because => "both install a package with the same name"
+
   def install
     args = [
       "INSTALL=#{prefix}",

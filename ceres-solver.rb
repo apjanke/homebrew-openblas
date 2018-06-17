@@ -19,6 +19,8 @@ class CeresSolver < Formula
   depends_on "openblas"
   depends_on "dpo/openblas/suite-sparse"
 
+  conflicts_with "ceres-solver", :because => "both install a package with the same name"
+
   def install
     so = OS.mac? ? "dylib" : "so"
     system "cmake", ".", *std_cmake_args,

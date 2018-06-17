@@ -9,6 +9,8 @@ class Metis < Formula
   depends_on "cmake" => :build
   depends_on "gcc" if build.with? "openmp"
 
+  conflicts_with "arpack", :because => "both install a package with the same name"
+
   fails_with :clang if build.with? "openmp"
 
   def install

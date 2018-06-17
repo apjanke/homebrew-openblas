@@ -14,6 +14,8 @@ class Superlu < Formula
   depends_on "openblas"
   depends_on "tcsh" => :build unless OS.mac?
 
+  conflicts_with "superlu", :because => "both install a package with the same name"
+
   def install
     ENV.deparallelize
     cp "MAKE_INC/make.mac-x", "./make.inc"

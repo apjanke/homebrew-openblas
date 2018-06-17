@@ -15,6 +15,8 @@ class Arpack < Formula
   depends_on "openblas"
   depends_on "open-mpi" if build.with? "mpi"
 
+  conflicts_with "arpack", :because => "both install a package with the same name"
+
   def install
     args = %W[ --disable-dependency-tracking
                --prefix=#{libexec}

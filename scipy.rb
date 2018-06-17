@@ -14,6 +14,8 @@ class Scipy < Formula
   depends_on "python" => :recommended if MacOS.version <= :snow_leopard
   depends_on "python3" => :recommended
 
+  conflicts_with "scipy", :because => "both install a package with the same name"
+
   cxxstdlib_check :skip
 
   # https://github.com/Homebrew/homebrew-python/issues/110

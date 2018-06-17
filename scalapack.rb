@@ -9,6 +9,8 @@ class Scalapack < Formula
   depends_on "open-mpi"
   depends_on "openblas"
 
+  conflicts_with "scalapack", :because => "both install a package with the same name"
+
   def install
     blas = "-L#{Formula["openblas"].opt_lib} -lopenblas"
 

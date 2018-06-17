@@ -7,6 +7,8 @@ class Qrupdate < Formula
   depends_on "gcc"
   depends_on "openblas"
 
+  conflicts_with "qrupdate", :because => "both install a package with the same name"
+
   def install
     # Parallel compilation not supported. Reported on 2017-07-21 at
     # https://sourceforge.net/p/qrupdate/discussion/905477/thread/d8f9c7e5/
